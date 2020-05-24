@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+{% block content %}
+    {% if all_patients %}
+    <ul class="list-group">
+        {% for patient in all_patients %}
+        <div class="list-group-item">
+            <li>{{ patient.patient_name }}</a>
+            <p>Status: {{patient.status}}</p>
+            </li>
+        </div>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div class="alert alert-danger">
+        No Patients added yet
+    </div>
+    {% endif %}
+{% endblock %}
