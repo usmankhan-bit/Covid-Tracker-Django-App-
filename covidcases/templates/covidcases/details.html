@@ -3,11 +3,19 @@
     {% if all_patients %}
     <ul class="list-group">
         {% for patient in all_patients %}
+        {% if patient.status == "active"%}
         <div class="list-group-item">
-            <li>{{ patient.patient_name }}</a>
-            <p>Status: {{patient.status}}</p>
+            <li>{{ patient.patient_name }}
+            <p>Active</p>
             </li>
         </div>
+        {% else %}
+        <div class="list-group-item">
+            <li>{{ patient.patient_name }}
+            <p>Dead</p>
+            </li>
+        </div>
+        {% endif %}
 
         {% endfor %}
     </ul>
