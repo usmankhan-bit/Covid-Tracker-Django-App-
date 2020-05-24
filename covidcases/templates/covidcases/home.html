@@ -1,0 +1,16 @@
+{% extends './base.html' %}
+{% block content %}
+    {% if all_countries %}
+    <ul>
+        {% for country in all_countries %}
+        <li><a href="">{{ country.country_name }}</a></li>
+        <p>Active Cases: {{country.active_cases}}</p><br>
+        <p>Dead Cases: {{country.dead_cases}}</p>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div class="alert alert-danger">
+        No Countries added yet
+    </div>
+    {% endif %}
+{% endblock %}
